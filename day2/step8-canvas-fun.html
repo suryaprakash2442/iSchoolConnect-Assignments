@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 2px solid silver;
+            
+        }
+    </style>
+    <script>
+        
+        var can, ctx;
+        addEventListener("load", init);
+        function init(){
+            can = document.getElementsByTagName("canvas")[0];
+            can.width= 500;
+            can.height = 500;
+            ctx = can.getContext("2d");
+            // ctx.font = "normal 30px Arial"
+            // ctx.fillText("iSchool India",150,50);
+            // ctx.textAlign = "center"
+            // var img = new Image()
+            //     img.src = "./images/rajani.jpg"
+            //     img.addEventListener("load",function(){
+            //         // ctx.scale(3,0.5);
+            //         // ctx.rotate((Math.PI / 180) * 0);
+            //         ctx.translate(50,50);
+            //         ctx.drawImage(img,0,0);
+            //     })
+            // ctx.moveTo(50,50);
+            // ctx.lineTo(100,100);
+
+            // square
+            ctx.moveTo(50,50);
+            ctx.lineTo(100,50);
+            ctx.lineTo(100,100);
+            ctx.lineTo(50,100);
+            ctx.lineTo(50,50);
+            ctx.closePath();
+            
+            // triangle
+            ctx.moveTo(200,50)
+            ctx.lineTo(250,100)
+            ctx.lineTo(150,100)
+            ctx.lineTo(200,50)
+            ctx.closePath();
+
+            // star
+            ctx.moveTo(100,200)
+            ctx.lineTo(80,225)
+            ctx.lineTo(50,225)
+            ctx.lineTo(75,250)
+            ctx.lineTo(65,275)
+            ctx.lineTo(100,250)
+            ctx.lineTo(135,275)
+            ctx.lineTo(125,250)
+            ctx.lineTo(150,225)
+            ctx.lineTo(120,225)
+            ctx.lineTo(100,200)
+            ctx.closePath();
+
+            // boat
+            ctx.moveTo(300,200)
+            ctx.lineTo(275,225)
+            ctx.lineTo(240,225)
+            ctx.lineTo(270,250)
+            ctx.lineTo(330,250)
+            ctx.lineTo(365,225)
+            ctx.lineTo(330,225)
+            ctx.lineTo(275,225)
+            ctx.lineTo(300,200)
+            ctx.lineTo(330,225)
+            
+            
+            ctx.closePath();
+
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 5;
+            // ctx.fillStyle = "green"
+            ctx.stroke()
+            // ctx.fill();
+            
+        }
+    </script>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+</html>
