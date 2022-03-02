@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        section{
+            width: 1100px;
+            background-color: rgb(198, 216, 34);
+            margin: auto;
+        }
+        article{
+            margin: 0 auto;
+            background-color: rgb(151, 168, 87);
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            border: none;
+            line-height: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        @media screen and (max-width: 600px){
+            article{
+              border: dotted 10px rgb(0, 0, 0);
+            }
+            section{
+              width: 300px;
+            }
+        }
+        @media screen and (min-width: 700px) and (max-width: 900px){
+            article{
+              border: solid 10px black;
+            }
+            section{
+              width: 600px;
+            }
+        }
+        @media screen and (max-width: 300px) {
+          article{
+              border: dashed 10px rgb(56, 236, 86);
+            }
+            section{
+              width: 200px;
+            }
+        }
+
+        @media print{
+          article{
+              border: double 5px transparent;
+            }
+          article, section{
+              -webkit-print-color-adjust: exact;   
+              color-adjust: exact;                 
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <article>1</article>
+        <article>2</article>
+        <article>3</article>
+        <article>4</article>
+        <article>5</article>
+    </section>
+</body>
+</html>       
