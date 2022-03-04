@@ -5,12 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        
-        function setInputValue(source,target){
+    <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
+
+    <script type="text/javascript">
+    
+    function setInputValue(source,target){
+        if(source.type=='color'){
+            var n_match = ntc.name(source.value);
+            n_rgb = n_match[0]; // RGB value of closest match
+            var value = n_match[1]; // Text string: Color name
+            n_exactmatch = n_match[2]; // True if exact color match
+            document.getElementById(target).textContent = value
+        }else
+            
             document.getElementById(target).textContent = source.value
-            document.getElementById(target).style.backgroundColor = source.value
+            document.getElementById(target).style.color = source.value
+        
         }
+    
+
 
     </script>
     
