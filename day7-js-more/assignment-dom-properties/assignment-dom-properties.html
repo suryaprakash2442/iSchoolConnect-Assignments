@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Properties</title>
+    
+</head>
+<body>
+    <header>Welcome!</header>
+    <br>
+    <section>
+    <form action="#" name="sampleForm" id="sampleForm">
+        <label for="enter"></label>
+        Sport Name:<input type="text" >
+    </form>
+    <br>
+    <img src="deadpool.jpg" >
+    <br>
+    <a href="https://developer.mozilla.org/en-US/">MDN Docs</a>
+
+    </section>
+        <script>
+            console.log(document.body);
+            console.log(document.title);
+            console.log(document.forms[0]);
+            console.log(document.forms['sampleForm']);
+            console.log(document.sampleForm);
+            console.log(document.images[0].src);
+            console.log(document.scripts);
+            console.log(document.links);
+            console.log(document.cookie = "sampleCookie");
+            console.log(document.domain);
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+
+    <script>
+        
+        function fun1(){
+            console.log("fun 1 was called");
+            var txt = document.createElement("p");
+            txt.innerText = "fun1 called";
+            document.getElementsByClassName("display")[0].appendChild(txt);
+        }
+        function fun2(){
+            console.log("fun 2 was called");
+            var txt = document.createElement("p");
+            txt.innerText = "fun2 called";
+            document.getElementsByClassName("display")[0].appendChild(txt);
+        }
+        function fun3(){
+            console.log("fun 3 was called");
+            var txt = document.createElement("p");
+            txt.innerText = "fun3 called";
+            document.getElementsByClassName("display")[0].appendChild(txt);
+        }
+        window.addEventListener("load",fun2);
+        document.addEventListener("DOMContentLoaded",fun3);
+
+        
+        
+    </script>
+</head>
+<body onload="fun1()">
+    <p>Order of execution: </p>
+    <div class="display"></div>
+    
+</body>
+</html>
+
+<!-- create a function called fun1 and call it on body onload
+    create a function called fun2 and call it on window.addEventListener load
+    create a function called fun3 and call it on document.addEventListener DOMContentLoaded
+    and findout the order of execution -->
