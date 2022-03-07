@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Fundamentals</title>
+    <style>
+        div{
+            height: 200px;
+            width: 600px;
+            background-color: slategray;
+            margin: auto;
+            margin-top: 90px;
+            overflow: auto;
+            padding: 10px;
+        }
+        button{
+            margin: auto;
+            position: absolute;
+            left: 45%;
+            top: 50px;
+            width: 200px;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            console.log("ReadyState Value: ",xhr.readyState);
+            if(xhr.status == 200 && xhr.readyState == 4){
+                var herodata = JSON.parse(xhr.responseText).herolist;
+                console.log(herodata.length);
+                for(var i = 0;i <herodata.length; i++){
+                    document.getElementById("h1").innerHTML += "<li>"+herodata[i].title+"</li>";
+                }
+            }else{
+                console.log(xhr.readyState);
+            }
+        };
+        document.addEventListener("DOMContentLoaded", function(){
+            
+            document.getElementsByTagName("button")[0].onclick = function(){
+                xhr.open("get","data.JSON",true);
+                xhr.send();
+            }
+        });
+    </script>
+</head>
+<body>
+    <button>Fetch Data</button>
+    <!-- <div id="log"></div> -->
+    <ol id="hl"></ol>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Fun</title>
+    <style>
+        #log{
+            width: 1100px;
+            height: 560px;
+            background-color: silver;
+            color: darkslategray;
+            font-family: 'Trebuchet MS' ;
+            text-align: justify;
+            padding: 20px;
+            overflow: auto;
+            margin: auto;
+        }
+        button{
+            width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+        .box{
+            background-color: slategray;
+            align-items: center;
+            float: left;
+            margin: 5px;
+            text-align: center;
+            width: 350px;
+        }
+        .box h1{
+            margin: 10px;
+            color: silver;
+            background-color: rgb(43, 41, 41);
+            
+        }
+        .box h2{
+            margin: 0px;
+            padding: 10px;
+        }
+        .box img{
+            
+            width: 300px;
+        }
+    </style>
+    <script>
+        var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                console.log("ReadyState Value : ",xhr.readyState);
+                if(xhr.status == 200 && xhr.readyState == 4){
+                    var hero = xhr.responseXML.getElementsByTagName("hl");
+                    for(var i = 0; i < hero.length; i++){
+                        // document.getElementById("log").innerHTML +="<li>"+hero[i].querySelector("title").innerHTML+"</li>";
+                        document.getElementById("log").innerHTML += "<div class='box'> <h1>"+hero[i].querySelector('title').innerHTML+"</h1> <h2>"+hero[i].querySelector('firstname').innerHTML+" "+hero[i].querySelector('lastname').innerHTML+"</h2> <img src='"+hero[i].querySelector("poster").innerHTML+"' alt='"+hero[i].querySelector('title').innerHTML+"'> <h2>City: "+hero[i].querySelector('city').innerHTML+"</h2> <h2>ticket price: "+hero[i].querySelector('ticketprice').innerHTML+"</h2> <h2>release date: "+hero[i].querySelector('releasedate').innerHTML+"</h2> </div>"
+                    }
+                }else{
+                    console.log(xhr.readyState);
+                    // document.getElementById("log").innerText += "XHR Status "+xhr.status+" | XHR Status Text : "+xhr.statusText+"\n";
+                }
+            };
+        document.addEventListener("DOMContentLoaded", function(){
+            document.getElementsByTagName("button")[0].onclick = function(){
+                xhr.open("get","data.xml",true);// 
+                xhr.send();
+            }
+        })
+    </script>
+</head>
+<body>
+    <button>Fetch Data</button>
+    <div id="log">
+
+    </div>
+    
+    
+    
+</body>
+</html>
+
+<!-- <title>Batman</title>
+    <gender>male</gender>
+    <firstname>Bruce</firstname>
+    <lastname>Wayne</lastname>
+    <city>Gotham</city>
+    <ticketprice>123.4567</ticketprice>
+    <releasedate>1/26/2018</releasedate>
+    <poster>assets/images/batman.jpg</poster> -->
