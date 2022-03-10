@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // console.log("log from line 9");
+        // console.log("log from line 10");
+        // for(let i = 0; i< 100000; i++){
+        //     console.log("log from line 12");
+        // }
+        // console.log("log from line 16");
+        let promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Success : Resolve message");
+                }else{
+                    reject("Error : Reject message")
+                }
+            },2000);
+        })
+        promise
+        .then((res) =>{
+            console.log("Then : ",res);
+            return res.toUpperCase();
+        })
+        .then((res) =>{
+            console.log("Then : ",res);
+            return res.toLowerCase();
+        })
+        .then((res) =>{
+            console.log("Then : ",res);
+            return res.length;
+        })
+        .then((res) =>{
+            console.log("Then : ",res);
+        })
+        .catch((error) =>{
+            console.log("Catch : ",error);
+        })
+        .finally(() =>{
+            console.log("promise is complete");
+        })
+
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

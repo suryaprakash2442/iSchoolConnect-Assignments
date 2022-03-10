@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let asyncCall1 = function(){
+        return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Response async call 1");
+                }else{
+                    reject("Reject message async call 1")
+                }
+                },2000);
+            })
+        };
+        let asyncCall2 = function(){
+        return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Response async call 2");
+                }else{
+                    reject("Reject message async call 2")
+                }
+                },2000);
+            })
+        };
+        let asyncCall3 = function(){
+        return new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(true){
+                    resolve("Response async call 3");
+                }else{
+                    reject("Reject message async call 3")
+                }
+                },1000);
+            })
+        };
+
+        // Promise
+        // .all([asyncCall1(),asyncCall2(),asyncCall3()])
+        // .then((res) => console.log(res))
+        // .catch((res) => console.log(error))
+        // .finally((res) => console.log("all complete"))
+
+        // Promise
+        // .any([asyncCall1(),asyncCall2(),asyncCall3()])
+        // .then((res) => console.log(res))
+        // .catch((res) => console.log(error))
+        // .finally((res) => console.log("at least one complete"))
+
+        Promise
+        .race([asyncCall1(),asyncCall2(),asyncCall3()])
+        .then((res) => console.log(res))
+        .catch((res) => console.log(error))
+        .finally((res) => console.log("promise race is complete"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
