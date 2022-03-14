@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+    $(()=>{
+        $('.e:header').css('color','slategrey')
+      $('li').css('border','0px solid red')
+      $('#first').html('First LI')
+      $('.a').html('Selected by class')
+      $('li#firstLI.b').css('color','green')
+      console.log($('*').html)
+      $('.a , .b').css('backgroun-color','red')
+      $('.a.b').css('text-align','center')
+      $('ul>li').css('font-family','Sans')
+      $('#ulID li').css('border-radius','1mm')
+      $('.c +.d').html('Class D')
+      $('.c ~ .d').html('all siblings of c')
+
+      $('div:empty').append('This is empty')
+      $('ul:has(.c)').css('background-color','khaki')
+      $('li:parent').append('  ---parent')
+      $('.d:last').append(' --hidden').css('display','none')
+      console.log($('.d:hidden').html())
+      console.log($('.d:visible').append(' --visible').html())
+      
+      $('.d:first').css('background-color','red')
+      $('li:last').css('background-color','green')
+      $('li:even').append(' -- even list items')
+      $('li:odd').append(' -- odd list items')
+      $('li:eq(7)').append(' -- 7th Index')
+      $('li:gt(7)').append(' -- greater than 7th Index')
+      $('li:lt(7)').append(' -- lesser than 7th Index')
+      
+      
+
+    })
+  </script>
+</head>
+<body>
+  <h1 class="e">Selectors</h1>
+  <ul id="ulID">
+    <li id="first" class="b">List Item</li>
+    <li class="a b">List Item</li>
+    <li class="c">List Item</li>
+    <li class="d">List Item</li>
+    <li class="d">list item</li>
+    <li class="d">list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ul>
+  <div></div>
+</body>
+</html>
