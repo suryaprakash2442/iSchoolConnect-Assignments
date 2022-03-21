@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods in Javascript</title>
+    <header>
+        String Methods in Javascript
+    </header>
+    <style>
+        header{
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        div{
+            background-color: slategray;
+            width: fit-content;
+            align-items: center;
+            font-size: 20px;
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+        addEventListener("load", function(){
+            var text = "String Methods in Javascript";
+            document.getElementById("one").innerHTML = "Character at index 1 => " + text.charAt(1);
+            document.getElementById("two").innerHTML = "Character at the end of the string => " + text.charAt(text.length-1);
+            document.getElementById("three").innerHTML = "Characters from index 2 to 9 are => " + text.substring(2,9);
+            document.getElementById("four").innerHTML =  "Characters from index 5 to 19 are => " + text.slice(5,19);
+            document.getElementById("five").innerHTML = "The last five characters are => " + text.slice(-5);
+            document.getElementById("six").innerHTML = "The position of the first instance of the letter 'i' => " + text.indexOf('i');
+            document.getElementById("seven").innerHTML = "The position of the last instance of the letter 'i' => " + text.lastIndexOf('i');
+            document.getElementById("eight").innerHTML = "The position of first instance of 'i' after the 4th index => " + text.indexOf("i",4);
+            document.getElementById("nine").innerHTML = "Splitting the words in the string => " + text.split(",");
+            document.getElementById("ten").innerHTML = "Text after replacing js with python is => " + text.replace("Javascript", "Python")
+            document.getElementById("eleven").innerHTML = "Upper case => " + text.toUpperCase()
+            document.getElementById("twelve").innerHTML = "Lower case => " + text.toLowerCase()
+        });
+
+    </script>
+</head>
+<body>
+    <div>
+    <p id="one"></p>
+    <p id="two"></p>
+    <p id="three"></p>
+    <p id="four"></p>
+    <p id="five"></p>
+    <p id="six"></p>
+    <p id="seven"></p>
+    <p id="eight"></p>
+    <p id="nine"></p>
+    <p id="ten"></p>
+    <p id="eleven"></p>
+    <p id="twelve"></p>
+
+    </div>
+</body>
+</html>
